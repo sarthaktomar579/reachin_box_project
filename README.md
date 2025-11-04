@@ -142,4 +142,28 @@ Frontend (`frontend/package.json`):
 ## License
 MIT
 
+## Deploy to Vercel
+This repo is pre-configured for Vercel hosting.
+
+What you get:
+- Serverless API at `/api/*` serving dummy-mode endpoints (no env keys required)
+- Static frontend built from `frontend/dist`
+
+Included files:
+- `api/index.ts` – Express app wrapped with serverless handler; serves the same endpoints as dummy mode
+- `vercel.json` – Builds API and static frontend, and routes requests
+- Root `package.json` – Provides `build:frontend` for Vercel static build
+
+Steps:
+1) Push the repo to GitHub/GitLab/Bitbucket
+2) Import the project in Vercel
+3) No extra settings required – the provided `vercel.json` will:
+   - Build `api/index.ts` with `@vercel/node`
+   - Run `npm run build:frontend` and serve `frontend/dist`
+4) Visit your Vercel URL
+
+Notes:
+- The Vercel API uses only dummy data (no DB/IMAP/ES/OpenAI needed). For full backend (DB/IMAP/ES), deploy the `backend` separately to a long-running host.
+
+
 
