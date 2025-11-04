@@ -11,8 +11,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx"     // 👈 this line fixes your build
   },
-  "include": ["src"],
+  "include": ["src", "next-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
